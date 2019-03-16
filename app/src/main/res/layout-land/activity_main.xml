@@ -36,13 +36,14 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="491dp"
+        android:onClick="onClick"
         android:text="simple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <Button
         android:id="@+id/advancedButton"
@@ -52,13 +53,14 @@
         android:layout_marginTop="261dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="430dp"
+        android:onClick="onClick"
         android:text="Advanced"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <Button
         android:id="@+id/aboutButton"
@@ -68,12 +70,14 @@
         android:layout_marginTop="319dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="372dp"
+        android:onClick="onClick"
         android:text="About"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <Button
         android:id="@+id/exitButton"
@@ -83,12 +87,14 @@
         android:layout_marginTop="382dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="309dp"
+        android:onClick="onClick"
         android:text="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
