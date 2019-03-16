@@ -10,4 +10,5 @@ public class AboutCalc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_calc);
     }
+
 }
