@@ -1,5 +1,7 @@
 package com.example.mycalculator;
 
+import android.content.Intent;
+import android.os.Process;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,20 +33,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.simpleButton: {
-
+                Intent simple = new Intent(this, SimpleCalc.class);
+                startActivity(simple);
                 break;
             }
             case R.id.advancedButton: {
-
+                Intent advanced = new Intent(this, AdvancedCalc.class);
+                startActivity(advanced);
                 break;
             }
             case R.id.aboutButton: {
-
+                Intent about = new Intent(this, AboutCalc.class);
+                startActivity(about);
                 break;
             }
             case R.id.exitButton: {
                 moveTaskToBack(true);
-                android.os.Process.killProcess(android.os.Process.myPid());
+                Process.killProcess(Process.myPid());
                 System.exit(1);
                 break;
             }
