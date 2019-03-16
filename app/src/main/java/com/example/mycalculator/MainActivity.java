@@ -33,18 +33,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.simpleButton: {
+
+
                 Intent simple = new Intent(this, SimpleCalc.class);
                 startActivity(simple);
+                setContentView(R.layout.activity_simple_calc);
                 break;
             }
             case R.id.advancedButton: {
+
                 Intent advanced = new Intent(this, AdvancedCalc.class);
                 startActivity(advanced);
+                setContentView(R.layout.activity_advanced_calc);
                 break;
             }
             case R.id.aboutButton: {
+
                 Intent about = new Intent(this, AboutCalc.class);
                 startActivity(about);
+                setContentView(R.layout.activity_about_calc);
+
                 break;
             }
             case R.id.exitButton: {
