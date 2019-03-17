@@ -30,7 +30,7 @@
 
     <Button
         android:id="@+id/simpleButton"
-        android:layout_width="667dp"
+        android:layout_width="715dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="200dp"
@@ -40,75 +40,75 @@
         android:text="simple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.306" />
 
     <Button
         android:id="@+id/advancedButton"
-        android:layout_width="0dp"
+        android:layout_width="715dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="261dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="430dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="491dp"
         android:onClick="onClick"
-        android:text="Advanced"
+        android:text="advanced"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.153" />
 
     <Button
         android:id="@+id/aboutButton"
-        android:layout_width="0dp"
+        android:layout_width="715dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="319dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="372dp"
         android:onClick="onClick"
         android:text="About"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/exitButton"
-        android:layout_width="0dp"
+        android:layout_width="715dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="382dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="309dp"
         android:onClick="onClick"
         android:text="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/aboutButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.418" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="200dp" />
+        app:layout_constraintGuide_end="211dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="241dp" />
+        app:layout_constraintGuide_begin="205dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
