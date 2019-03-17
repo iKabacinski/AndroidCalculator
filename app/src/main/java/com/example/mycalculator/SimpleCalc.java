@@ -7,69 +7,76 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class SimpleCalc extends AppCompatActivity implements View.OnClickListener {
+   Button zeroButton, oneButton,twoButton,threeButton,fourButton,fiveButton,sixButton,eightButton,nineButton,
+    sevenButton,bkspButton,cButton,plusMinusButton,slashButton,plusButton,minusButton,multipleButton,resultButton,pointButton;
+    EditText wynik;
+
+    float mValueOne, mValueTwo;
+
+    boolean crunchifyAddition, mSubtract, crunchifyMultiplication, crunchifyDivision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_calc);
-        Button zeroButton = (Button) findViewById(R.id.zeroButton);
+         zeroButton = (Button) findViewById(R.id.zeroButton);
         zeroButton.setOnClickListener(this);
 
-        Button oneButton = (Button) findViewById(R.id.oneButton);
+         oneButton = (Button) findViewById(R.id.oneButton);
         oneButton.setOnClickListener(this);
 
-        Button twoButton = (Button) findViewById(R.id.twoButton);
+         twoButton = (Button) findViewById(R.id.twoButton);
         twoButton.setOnClickListener(this);
 
-        Button threeButton = (Button) findViewById(R.id.threeButton);
+         threeButton = (Button) findViewById(R.id.threeButton);
         threeButton.setOnClickListener(this);
 
-        Button fourButton = (Button) findViewById(R.id.fourButton);
+         fourButton = (Button) findViewById(R.id.fourButton);
         fourButton.setOnClickListener(this);
 
-        Button fiveButton = (Button) findViewById(R.id.fiveButton);
+         fiveButton = (Button) findViewById(R.id.fiveButton);
         fiveButton.setOnClickListener(this);
 
-        Button sixButton = (Button) findViewById(R.id.sixButton);
+         sixButton = (Button) findViewById(R.id.sixButton);
         sixButton.setOnClickListener(this);
 
-        Button sevenButton = (Button) findViewById(R.id.sevenButton);
+         sevenButton = (Button) findViewById(R.id.sevenButton);
         sevenButton.setOnClickListener(this);
 
-        Button eightButton = (Button) findViewById(R.id.eightButton);
+         eightButton = (Button) findViewById(R.id.eightButton);
         eightButton.setOnClickListener(this);
 
-        Button nineButton = (Button) findViewById(R.id.nineButton);
+         nineButton = (Button) findViewById(R.id.nineButton);
         nineButton.setOnClickListener(this);
 
-        Button bkspButton = (Button) findViewById(R.id.bkspButton);
+         bkspButton = (Button) findViewById(R.id.bkspButton);
         bkspButton.setOnClickListener(this);
 
-        Button cButton = (Button) findViewById(R.id.cButton);
+         cButton = (Button) findViewById(R.id.cButton);
         cButton.setOnClickListener(this);
 
-        Button plusMinusButton = (Button) findViewById(R.id.plusMinusButton);
+         plusMinusButton = (Button) findViewById(R.id.plusMinusButton);
         plusMinusButton.setOnClickListener(this);
 
-        Button slashButton = (Button) findViewById(R.id.slashButton);
+         slashButton = (Button) findViewById(R.id.slashButton);
         slashButton.setOnClickListener(this);
 
-        Button plusButton = (Button) findViewById(R.id.plusButton);
+         plusButton = (Button) findViewById(R.id.plusButton);
         plusButton.setOnClickListener(this);
 
-        Button minusButton = (Button) findViewById(R.id.minusButton);
+         minusButton = (Button) findViewById(R.id.minusButton);
         minusButton.setOnClickListener(this);
 
-        Button multipleButton = (Button) findViewById(R.id.multileButton);
+         multipleButton = (Button) findViewById(R.id.multileButton);
         multipleButton.setOnClickListener(this);
 
-        Button resultButton = (Button) findViewById(R.id.resultButton);
+         resultButton = (Button) findViewById(R.id.resultButton);
         resultButton.setOnClickListener(this);
 
-        Button pointButton = (Button) findViewById(R.id.pointButton);
+         pointButton = (Button) findViewById(R.id.pointButton);
         pointButton.setOnClickListener(this);
 
-        EditText text = (EditText) findViewById(R.id.text);
+        EditText wynik = (EditText) findViewById(R.id.wynik);
 
 
 
@@ -87,33 +94,53 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()){
 
             case R.id.zeroButton:{
+                wynik.setText(wynik.getText() + "0");
+
                 break;
             }
             case R.id.oneButton:{
+                wynik.setText(wynik.getText() + "1");
+
                 break;
             }
             case R.id.twoButton:{
+                wynik.setText(wynik.getText() + "2");
+
                 break;
             }
             case R.id.threeButton:{
+                wynik.setText(wynik.getText() + "3");
+
                 break;
             }
             case R.id.fourButton:{
+                wynik.setText(wynik.getText() + "4");
+
                 break;
             }
             case R.id.fiveButton:{
+                wynik.setText(wynik.getText() + "5");
+
                 break;
             }
             case R.id.sixButton:{
+                wynik.setText(wynik.getText() + "6");
+
                 break;
             }
             case R.id.sevenButton:{
+                wynik.setText(wynik.getText() + "7");
+
                 break;
             }
             case R.id.eightButton:{
+                wynik.setText(wynik.getText() + "8");
+
                 break;
             }
             case R.id.nineButton:{
+                wynik.setText(wynik.getText() + "9");
+
                 break;
             }
             case R.id.bkspButton:{

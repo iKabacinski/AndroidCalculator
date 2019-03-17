@@ -7,14 +7,16 @@
     tools:context=".SimpleCalc">
 
     <EditText
-        android:id="@+id/text"
+        android:id="@+id/wynik"
+        style="@style/Widget.AppCompat.EditText"
         android:layout_width="395dp"
         android:layout_height="192dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="459dp"
+        android:inputType="number"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
         android:textAlignment="textEnd"
-        android:textAllCaps="true"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
