@@ -144,8 +144,8 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 }
                 else{
                     wynik.setText("");
-                    valueOne= Float.parseFloat(null);
-                    valueTwo=Float.parseFloat(null);
+                    valueOne= Float.parseFloat("");
+                    valueTwo=Float.parseFloat("");
                     c=0;
                 }
                 break;
