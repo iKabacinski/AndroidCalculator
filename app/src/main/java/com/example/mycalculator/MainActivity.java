@@ -10,14 +10,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private int k;
-
-    @Override
-    protected void onStart() {
-        k=0;
-        super.onStart();
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

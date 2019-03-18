@@ -10,10 +10,10 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
    Button zeroButton, oneButton,twoButton,threeButton,fourButton,fiveButton,sixButton,eightButton,nineButton,
     sevenButton,bkspButton,cButton,plusMinusButton,slashButton,plusButton,minusButton,multipleButton,resultButton,pointButton;
     EditText wynik;
-
+    private int c=0;
     float valueOne, valueTwo;
     float number;
-    boolean add, sub, mul, div,minusValue;
+    boolean add, sub, mul, div;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,16 +78,6 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
         wynik = (EditText) findViewById(R.id.wynik);
         wynik.setOnClickListener(this);
-
-
-
-
-
-
-
-
-
-
     }
 
     @Override
@@ -148,8 +138,16 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.cButton:{
-                wynik.setText("");
-
+                c++;
+                if(c==1) {
+                    wynik.setText("");
+                }
+                else{
+                    wynik.setText("");
+                    valueOne= Float.parseFloat(null);
+                    valueTwo=Float.parseFloat(null);
+                    c=0;
+                }
                 break;
             }
             case R.id.plusMinusButton:{
