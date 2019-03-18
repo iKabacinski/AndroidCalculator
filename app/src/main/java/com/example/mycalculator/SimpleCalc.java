@@ -82,6 +82,8 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
+        wynik.setText("");
+
         switch (v.getId()){
 
             case R.id.zeroButton:{
