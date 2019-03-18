@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 Intent advanced = new Intent(this, AdvancedCalc.class);
                 startActivity(advanced);
-                setContentView(R.layout.activity_advanced_calc);
+                setContentView(R.layout.activity_advance_calc);
                 break;
             }
             case R.id.aboutButton: {

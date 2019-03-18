@@ -43,7 +43,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
          sevenButton = (Button) findViewById(R.id.sevenButton);
         sevenButton.setOnClickListener(this);
 
-         eightButton = (Button) findViewById(R.id.eightButton);
+         eightButton = (Button) findViewById(R.id.cosButton);
         eightButton.setOnClickListener(this);
 
          nineButton = (Button) findViewById(R.id.nineButton);
@@ -78,11 +78,11 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
         wynik = (EditText) findViewById(R.id.wynik);
         wynik.setOnClickListener(this);
+        wynik.setText("");
     }
 
     @Override
     public void onClick(View v) {
-        wynik.setText("");
 
         switch (v.getId()){
 
@@ -126,7 +126,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
                 break;
             }
-            case R.id.eightButton:{
+            case R.id.cosButton:{
                 wynik.setText(wynik.getText() + "8");
 
                 break;
@@ -197,19 +197,19 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.resultButton:{
                 valueTwo=Float.parseFloat(wynik.getText()+"");
-                if(add==true){
+                if(add){
                     wynik.setText(valueOne+valueTwo+"");
                     add=false;
                 }
-                if(sub==true){
+                if(sub){
                     wynik.setText(valueOne-valueTwo+"");
                     sub=false;
                 }
-                if(mul==true){
+                if(mul){
                     wynik.setText(valueOne*valueTwo+"");
                     mul=false;
                 }
-                if(div==true){
+                if(div){
                     wynik.setText(valueOne/valueTwo+"");
                     div=false;
                 }
