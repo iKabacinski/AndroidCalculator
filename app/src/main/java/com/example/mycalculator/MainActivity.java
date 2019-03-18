@@ -6,8 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private int k;
+
+    @Override
+    protected void onStart() {
+        k=0;
+        super.onStart();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,5 +72,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
         }
+    }
+    @Override
+    public void onBackPressed(){
+        Intent main = new Intent(this, MainActivity.class);
+        startActivity(main);
+        setContentView(R.layout.activity_main);
+          //  Toast.makeText(MainActivity.this,"Click one more time to exist app", Toast.LENGTH_SHORT).show();
+
     }
 }

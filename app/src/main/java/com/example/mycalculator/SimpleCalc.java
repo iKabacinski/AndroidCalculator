@@ -224,4 +224,5 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
         }
 
     }
+
 }
