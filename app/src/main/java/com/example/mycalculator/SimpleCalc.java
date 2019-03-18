@@ -11,9 +11,9 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
     sevenButton,bkspButton,cButton,plusMinusButton,slashButton,plusButton,minusButton,multipleButton,resultButton,pointButton;
     EditText wynik;
 
-    float mValueOne, mValueTwo;
+    float valueOne, valueTwo;
 
-    boolean crunchifyAddition, mSubtract, crunchifyMultiplication, crunchifyDivision;
+    boolean add, sub, mul, div;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,8 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
          pointButton = (Button) findViewById(R.id.pointButton);
         pointButton.setOnClickListener(this);
 
-        EditText wynik = (EditText) findViewById(R.id.wynik);
+        wynik = (EditText) findViewById(R.id.wynik);
+        wynik.setOnClickListener(this);
 
 
 
@@ -147,27 +148,68 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.cButton:{
+                wynik.setText("");
+
                 break;
             }
             case R.id.plusMinusButton:{
                 break;
             }
             case R.id.slashButton:{
+                valueOne = Float.parseFloat(wynik.getText() + "");
+                div = true;
+                wynik.setText(null);
                 break;
             }
             case R.id.multileButton:{
+                valueOne = Float.parseFloat(wynik.getText() + "");
+                mul = true;
+                wynik.setText(null);
+
                 break;
             }
             case R.id.minusButton:{
+
+                    valueOne = Float.parseFloat(wynik.getText()+"");
+                    add=true;
+                    wynik.setText(null);
+
                 break;
             }
             case R.id.plusButton:{
+                if(wynik==null){
+                    wynik.setText("");
+                }
+                else{
+                    valueOne = Float.parseFloat(wynik.getText()+"");
+                    add=true;
+                    wynik.setText(null);
+                }
                 break;
             }
             case R.id.resultButton:{
+                valueTwo=Float.parseFloat(wynik.getText()+"");
+                if(add==true){
+                    wynik.setText(valueOne+valueTwo+"");
+                    add=false;
+                }
+                if(sub==true){
+                    wynik.setText(valueOne-valueTwo+"");
+                    sub=false;
+                }
+                if(mul==true){
+                    wynik.setText(valueOne*valueTwo+"");
+                    mul=false;
+                }
+                if(div==true){
+                    wynik.setText(valueOne/valueTwo+"");
+                    div=false;
+                }
                 break;
             }
             case R.id.pointButton:{
+                wynik.setText(wynik.getText() + ".");
+
                 break;
             }
 
