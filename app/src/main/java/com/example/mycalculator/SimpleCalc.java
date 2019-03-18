@@ -12,8 +12,8 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
     EditText wynik;
 
     float valueOne, valueTwo;
-
-    boolean add, sub, mul, div;
+    float number;
+    boolean add, sub, mul, div,minusValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,6 +153,14 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.plusMinusButton:{
+                number = Float.parseFloat(wynik.getText() + "");
+                if(number>0){
+                    wynik.setText("-"+wynik.getText());
+                }
+                else {
+                    number = -1*Float.parseFloat(wynik.getText() + "");
+                    wynik.setText(number+"");
+                }
                 break;
             }
             case R.id.slashButton:{
