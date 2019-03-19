@@ -43,7 +43,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
          sevenButton = (Button) findViewById(R.id.sevenButton);
         sevenButton.setOnClickListener(this);
 
-         eightButton = (Button) findViewById(R.id.cosButton);
+         eightButton = (Button) findViewById(R.id.eightButton);
         eightButton.setOnClickListener(this);
 
          nineButton = (Button) findViewById(R.id.nineButton);
@@ -126,7 +126,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
                 break;
             }
-            case R.id.cosButton:{
+            case R.id.eightButton:{
                 wynik.setText(wynik.getText() + "8");
 
                 break;
@@ -137,6 +137,11 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.bkspButton:{
+                int length = wynik.length();
+                if(length!=0) {
+                    String tekst = String.valueOf(wynik.getText());
+                    wynik.setText(tekst.substring(length - (length - 1)));
+                }
                 break;
             }
             case R.id.cButton:{

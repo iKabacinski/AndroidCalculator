@@ -151,7 +151,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cosButton"
+        android:id="@+id/eightButton"
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="117dp"
