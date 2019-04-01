@@ -152,9 +152,8 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 else{
                     wynik.setText("");
                     valueOne= Float.parseFloat("");
-                    valueTwo=Float.parseFloat("");
-                    c=0;
-                }
+                    c=0;}
+
                 break;
             }
             case R.id.plusMinusButton:{
