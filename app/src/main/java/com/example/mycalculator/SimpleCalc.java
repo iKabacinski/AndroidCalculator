@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SimpleCalc extends AppCompatActivity implements View.OnClickListener {
    Button zeroButton, oneButton,twoButton,threeButton,fourButton,fiveButton,sixButton,eightButton,nineButton,
@@ -214,8 +215,14 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                     mul=false;
                 }
                 if(div){
-                    wynik.setText(valueOne/valueTwo+"");
-                    div=false;
+                    if (valueTwo==0){
+                        Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_LONG);
+                        div =false;
+                    }
+                    else {
+                        wynik.setText(valueOne / valueTwo + "");
+                        div = false;
+                    }
                 }
                 break;
             }
