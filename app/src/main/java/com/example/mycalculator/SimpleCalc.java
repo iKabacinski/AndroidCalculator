@@ -13,71 +13,70 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
     EditText wynik;
     private int c=0;
     float valueOne, valueTwo;
-    float number;
     boolean add, sub, mul, div;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_calc);
-         zeroButton = (Button) findViewById(R.id.zeroButton);
+         zeroButton =  findViewById(R.id.zeroButton);
         zeroButton.setOnClickListener(this);
 
-         oneButton = (Button) findViewById(R.id.oneButton);
+         oneButton =  findViewById(R.id.oneButton);
         oneButton.setOnClickListener(this);
 
-         twoButton = (Button) findViewById(R.id.twoButton);
+         twoButton =  findViewById(R.id.twoButton);
         twoButton.setOnClickListener(this);
 
-         threeButton = (Button) findViewById(R.id.threeButton);
+         threeButton =  findViewById(R.id.threeButton);
         threeButton.setOnClickListener(this);
 
-         fourButton = (Button) findViewById(R.id.fourButton);
+         fourButton =  findViewById(R.id.fourButton);
         fourButton.setOnClickListener(this);
 
-         fiveButton = (Button) findViewById(R.id.fiveButton);
+         fiveButton = findViewById(R.id.fiveButton);
         fiveButton.setOnClickListener(this);
 
-         sixButton = (Button) findViewById(R.id.sixButton);
+         sixButton =  findViewById(R.id.sixButton);
         sixButton.setOnClickListener(this);
 
-         sevenButton = (Button) findViewById(R.id.sevenButton);
+         sevenButton = findViewById(R.id.sevenButton);
         sevenButton.setOnClickListener(this);
 
-         eightButton = (Button) findViewById(R.id.eightButton);
+         eightButton =  findViewById(R.id.eightButton);
         eightButton.setOnClickListener(this);
 
-         nineButton = (Button) findViewById(R.id.nineButton);
+         nineButton =  findViewById(R.id.nineButton);
         nineButton.setOnClickListener(this);
 
-         bkspButton = (Button) findViewById(R.id.bkspButton);
+         bkspButton =  findViewById(R.id.bkspButton);
         bkspButton.setOnClickListener(this);
 
-         cButton = (Button) findViewById(R.id.cButton);
+         cButton =  findViewById(R.id.cButton);
         cButton.setOnClickListener(this);
 
-         plusMinusButton = (Button) findViewById(R.id.plusMinusButton);
+         plusMinusButton =  findViewById(R.id.plusMinusButton);
         plusMinusButton.setOnClickListener(this);
 
-         slashButton = (Button) findViewById(R.id.slashButton);
+         slashButton = findViewById(R.id.slashButton);
         slashButton.setOnClickListener(this);
 
-         plusButton = (Button) findViewById(R.id.plusButton);
+         plusButton = findViewById(R.id.plusButton);
         plusButton.setOnClickListener(this);
 
-         minusButton = (Button) findViewById(R.id.minusButton);
+         minusButton =  findViewById(R.id.minusButton);
         minusButton.setOnClickListener(this);
 
-         multipleButton = (Button) findViewById(R.id.multileButton);
+         multipleButton =  findViewById(R.id.multileButton);
         multipleButton.setOnClickListener(this);
 
-         resultButton = (Button) findViewById(R.id.resultButton);
+         resultButton =  findViewById(R.id.resultButton);
         resultButton.setOnClickListener(this);
 
-         pointButton = (Button) findViewById(R.id.pointButton);
+         pointButton =  findViewById(R.id.pointButton);
         pointButton.setOnClickListener(this);
 
-        wynik = (EditText) findViewById(R.id.wynik);
+        wynik =  findViewById(R.id.wynik);
         wynik.setOnClickListener(this);
         wynik.setText("");
     }
@@ -158,7 +157,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.plusMinusButton:{
-                number = Float.parseFloat(wynik.getText() + "");
+                float number = Float.parseFloat(wynik.getText() + "");
                 if(number>0){
                     wynik.setText("-"+wynik.getText());
                 }
@@ -227,6 +226,12 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.pointButton:{
+                String liczba= String.valueOf(wynik.getText());
+                if(liczba.contains("."))
+                {
+                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_LONG);
+                }
+                else
                 wynik.setText(wynik.getText() + ".");
 
                 break;

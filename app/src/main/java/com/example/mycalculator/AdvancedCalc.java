@@ -14,9 +14,6 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
     EditText wynik;
     private int c=0;
     float valueOne, valueTwo;
-
-    float number;
-
     boolean add, sub, mul, div,
     pow,log;
 
@@ -186,7 +183,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.plusMinusButton:{
-                number = Float.parseFloat(wynik.getText() + "");
+                float number = Float.parseFloat(wynik.getText() + "");
                 if(number>0){
                     wynik.setText("-"+wynik.getText());
                 }
@@ -261,7 +258,13 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.pointButton:{
-                wynik.setText(wynik.getText() + ".");
+                String liczba = String.valueOf(wynik.getText());
+                if(liczba.contains("."))
+                {
+                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_LONG);
+                }
+                else
+                    wynik.setText(wynik.getText() + ".");
 
                 break;
             }
