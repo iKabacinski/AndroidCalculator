@@ -178,7 +178,14 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 else{
                     wynik.setText("0");
                     valueOne= 0;
-                    c=0;}
+                    c=0;
+                    add=false;
+                    sub=false;
+                    mul=false;
+                    div=false;
+                    pow=false;
+                    log=false;
+                }
 
                 break;
             }
@@ -197,7 +204,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.slashButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat(wynik.getText() + "0");
+                    valueOne = Float.parseFloat("0"+wynik.getText() + "0");
                     div = true;
                     wynik.setText("0");
                 }
@@ -206,7 +213,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.multileButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat(wynik.getText() + "0");
+                    valueOne = Float.parseFloat("0"+wynik.getText() + "0");
                     mul = true;
                     wynik.setText("0");
                 }
@@ -215,7 +222,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.minusButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat(wynik.getText() + "0");
+                    valueOne = Float.parseFloat("0"+wynik.getText() + "0");
                     add = true;
                     wynik.setText("0");
                 }
@@ -224,14 +231,14 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.plusButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat(wynik.getText() + "");
+                    valueOne = Float.parseFloat("0"+wynik.getText() + "");
                     add = true;
                     wynik.setText("0");
                 }
                 break;
             }
             case R.id.resultButton:{
-                valueTwo=Float.parseFloat(wynik.getText()+"");
+                valueTwo=Float.parseFloat("0"+wynik.getText()+"");
                 if(add)
                 {
                     wynik.setText(valueOne+valueTwo+"");
@@ -276,43 +283,43 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             }
             // Advanced operations
             case R.id.sinButton:{
-                valueTwo= Float.parseFloat(wynik.getText()+"");
+                valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.sin(valueTwo)+"");
                 break;
             }
             case R.id.cosButton:{
-                valueTwo= Float.parseFloat(wynik.getText()+"");
+                valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.cos(valueTwo)+"");
                 break;
             }
             case R.id.tanButton:{
-                valueTwo= Float.parseFloat(wynik.getText()+"");
+                valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.tan(valueTwo)+"");
                 break;
             }
             case R.id.sqrtButton:{
-                valueTwo= Float.parseFloat(wynik.getText()+"");
+                valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.sqrt(valueTwo)+"");
                 break;
             }
             case R.id.pow2Button:{
-                valueTwo= Float.parseFloat(wynik.getText()+"");
+                valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.pow(valueTwo,2)+"");
                 break;
             }
             case R.id.lnButton:{
-                valueTwo= Float.parseFloat(wynik.getText()+"");
+                valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.log(valueTwo)+"");
                 break;
             }
             case R.id.xpowYButton:{
-                valueOne = Float.parseFloat(wynik.getText()+"");
+                valueOne = Float.parseFloat("0"+wynik.getText()+"");
                 pow=true;
                 wynik.setText("0");
                 break;
             }
             case R.id.logButton:{
-                valueOne = Float.parseFloat(wynik.getText()+"");
+                valueOne = Float.parseFloat("0"+wynik.getText()+"");
                 log=true;
                 wynik.setText("0");
                 break;
