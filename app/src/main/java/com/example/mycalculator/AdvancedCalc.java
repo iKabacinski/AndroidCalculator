@@ -104,7 +104,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
 
         wynik = findViewById(R.id.wynik);
         wynik.setOnClickListener(this);
-        wynik.setText("");
+        wynik.setText("0");
     }
 
     @Override
@@ -240,7 +240,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 }
                 if(div){
                     if (valueTwo==0){
-                        Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_LONG);
+                        Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_LONG).show();
                         div =false;
                     }
                     else {
@@ -261,7 +261,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 String liczba = String.valueOf(wynik.getText());
                 if(liczba.contains("."))
                 {
-                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_LONG).show();
                 }
                 else
                     wynik.setText(wynik.getText() + ".");

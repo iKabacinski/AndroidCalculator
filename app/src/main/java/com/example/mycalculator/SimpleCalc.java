@@ -78,7 +78,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
         wynik =  findViewById(R.id.wynik);
         wynik.setOnClickListener(this);
-        wynik.setText("");
+        wynik.setText("0");
     }
 
     @Override
@@ -151,23 +151,25 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 }
                 else{
                     wynik.setText("");
-                    valueOne= Float.parseFloat("");
+                    valueOne= 0;
                     c=0;}
 
                 break;
             }
             case R.id.plusMinusButton:{
-                float number = Float.parseFloat(wynik.getText() + "");
-                if(number>0){
+
+                String sNumber = wynik.getText()+"";
+                if(!sNumber.contains("-")){
                     wynik.setText("-"+wynik.getText());
                 }
-                else {
-                    number = -1*Float.parseFloat(wynik.getText() + "");
+                else if(sNumber.contains("-")) {
+                    float number = -1 * Float.parseFloat(wynik.getText() + "");
                     wynik.setText(number+"");
                 }
                 break;
             }
             case R.id.slashButton:{
+
                 valueOne = Float.parseFloat(wynik.getText() + "");
                 div = true;
                 wynik.setText(null);
@@ -215,7 +217,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 }
                 if(div){
                     if (valueTwo==0){
-                        Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_LONG);
+                        Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_LONG).show();
                         div =false;
                     }
                     else {
@@ -229,7 +231,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 String liczba= String.valueOf(wynik.getText());
                 if(liczba.contains("."))
                 {
-                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_LONG).show();
                 }
                 else
                 wynik.setText(wynik.getText() + ".");
