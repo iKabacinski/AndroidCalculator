@@ -45,7 +45,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
         sevenButton = findViewById(R.id.sevenButton);
         sevenButton.setOnClickListener(this);
 
-        eightButton = findViewById(R.id.eightButton);
+        eightButton = findViewById(R.id.cosButton);
         eightButton.setOnClickListener(this);
 
         nineButton = findViewById(R.id.nineButton);
@@ -204,7 +204,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.slashButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat("0"+wynik.getText() + "0");
+                    valueOne = Float.parseFloat("0"+wynik.getText());
                     div = true;
                     wynik.setText("0");
                 }
@@ -213,7 +213,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.multileButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat("0"+wynik.getText() + "0");
+                    valueOne = Float.parseFloat("0"+wynik.getText());
                     mul = true;
                     wynik.setText("0");
                 }
@@ -222,7 +222,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.minusButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat("0"+wynik.getText() + "0");
+                    valueOne = Float.parseFloat("0"+wynik.getText());
                     add = true;
                     wynik.setText("0");
                 }
@@ -231,14 +231,14 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.plusButton:{
                 if(wynik.getText()!=null)
                 {
-                    valueOne = Float.parseFloat("0"+wynik.getText() + "");
+                    valueOne = Float.parseFloat("0"+wynik.getText());
                     add = true;
                     wynik.setText("0");
                 }
                 break;
             }
             case R.id.resultButton:{
-                valueTwo=Float.parseFloat("0"+wynik.getText()+"");
+                valueTwo=Float.parseFloat("0"+wynik.getText());
                 if(add)
                 {
                     wynik.setText(valueOne+valueTwo+"");

@@ -173,19 +173,19 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.slashButton: {
-                valueOne = Float.parseFloat("0" + wynik.getText() + "");
+                valueOne = Float.parseFloat("0" + wynik.getText());
                 div = true;
                 wynik.setText("0");
                 break;
             }
             case R.id.multileButton: {
-                valueOne = Float.parseFloat("0" + wynik.getText() + "");
+                valueOne = Float.parseFloat("0" + wynik.getText());
                 mul = true;
                 wynik.setText("0");
                 break;
             }
             case R.id.minusButton: {
-                valueOne = Float.parseFloat("0" + wynik.getText() + "");
+                valueOne = Float.parseFloat("0" + wynik.getText());
                 add = true;
                 wynik.setText("0");
                 break;
@@ -197,7 +197,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.resultButton: {
-                valueTwo = Float.parseFloat("0"+wynik.getText() + "");
+                valueTwo = Float.parseFloat("0"+wynik.getText());
                 if (add) {
                     wynik.setText(valueOne + valueTwo + "");
                     add = false;
