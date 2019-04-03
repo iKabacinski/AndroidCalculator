@@ -173,80 +173,82 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.cButton:{
                 c++;
                 if(c==1) {
-                    wynik.setText("");
+                    wynik.setText("0");
                 }
                 else{
-                    wynik.setText("");
-                    valueOne= Float.parseFloat("");
+                    wynik.setText("0");
+                    valueOne= 0;
                     c=0;}
 
                 break;
             }
             case R.id.plusMinusButton:{
-                float number = Float.parseFloat(wynik.getText() + "");
-                if(number>0){
+
+                String sNumber = wynik.getText()+"";
+                if(!sNumber.contains("-")){
                     wynik.setText("-"+wynik.getText());
                 }
-                else {
-                    number = -1*Float.parseFloat(wynik.getText() + "");
+                else if(sNumber.contains("-")) {
+                    float number = -1 * Float.parseFloat(wynik.getText() + "");
                     wynik.setText(number+"");
                 }
                 break;
             }
             case R.id.slashButton:{
-                valueOne = Float.parseFloat(wynik.getText() + "");
+                valueOne = Float.parseFloat(wynik.getText() + "0");
                 div = true;
-                wynik.setText(null);
+                wynik.setText("0");
                 break;
             }
             case R.id.multileButton:{
-                valueOne = Float.parseFloat(wynik.getText() + "");
+                valueOne = Float.parseFloat(wynik.getText() + "0");
                 mul = true;
-                wynik.setText(null);
+                wynik.setText("0");
 
                 break;
             }
             case R.id.minusButton:{
-                valueOne = Float.parseFloat(wynik.getText()+"");
+                valueOne = Float.parseFloat(wynik.getText()+"0");
                 add=true;
-                wynik.setText(null);
+                wynik.setText("0");
 
                 break;
             }
             case R.id.plusButton:{
-                if(wynik==null){
-                    wynik.setText("");
-                }
-                else{
+
                     valueOne = Float.parseFloat(wynik.getText()+"");
                     add=true;
-                    wynik.setText(null);
-                }
+                    wynik.setText("0");
+
                 break;
             }
             case R.id.resultButton:{
                 valueTwo=Float.parseFloat(wynik.getText()+"");
-                if(add){
+                if(add)
+                {
                     wynik.setText(valueOne+valueTwo+"");
                     add=false;
                 }
-                if(sub){
+                if(sub)
+                {
                     wynik.setText(valueOne-valueTwo+"");
                     sub=false;
                 }
-                if(mul){
+                if(mul)
+                {
                     wynik.setText(valueOne*valueTwo+"");
                     mul=false;
                 }
                 if(div){
-                    if (valueTwo==0){
-                        Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_LONG).show();
-                        div =false;
+                    if (valueTwo==0)
+                    {
+                        Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_SHORT).show();
                     }
-                    else {
+                    else
+                        {
                         wynik.setText(valueOne / valueTwo + "");
                         div = false;
-                    }
+                        }
                 }
                 if(pow){
                     wynik.setText(Math.pow(valueOne,valueTwo)+"");
@@ -261,7 +263,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 String liczba = String.valueOf(wynik.getText());
                 if(liczba.contains("."))
                 {
-                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_SHORT).show();
                 }
                 else
                     wynik.setText(wynik.getText() + ".");
