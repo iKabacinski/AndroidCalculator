@@ -19,6 +19,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_calc);
+
          zeroButton =  findViewById(R.id.zeroButton);
         zeroButton.setOnClickListener(this);
 
@@ -137,10 +138,10 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.bkspButton:{
-                int length = wynik.length();
-                if(length!=0) {
+                int len = wynik.length();
+                if(wynik.length()!=0) {
                     String tekst = String.valueOf(wynik.getText());
-                    wynik.setText(tekst.substring(1,length));
+                    wynik.setText(tekst.substring(1,len));
                 }
                 break;
             }

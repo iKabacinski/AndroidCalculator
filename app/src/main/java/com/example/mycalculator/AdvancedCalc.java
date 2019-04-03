@@ -163,10 +163,10 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.bkspButton:{
-                int length = wynik.length();
-                if(length!=0) {
+                int len = wynik.length();
+                if(wynik.length()!=0) {
                     String tekst = String.valueOf(wynik.getText());
-                    wynik.setText(tekst.substring(1,length));
+                    wynik.setText(tekst.substring(1,len));
                 }
                 break;
             }
