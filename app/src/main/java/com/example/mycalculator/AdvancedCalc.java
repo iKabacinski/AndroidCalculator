@@ -166,7 +166,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 int length = wynik.length();
                 if(length!=0) {
                     String tekst = String.valueOf(wynik.getText());
-                    wynik.setText(tekst.substring(length - (length - 1)));
+                    wynik.setText(tekst.substring(1,length));
                 }
                 break;
             }
@@ -195,31 +195,39 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.slashButton:{
-                valueOne = Float.parseFloat(wynik.getText() + "0");
-                div = true;
-                wynik.setText("0");
+                if(wynik.getText()!=null)
+                {
+                    valueOne = Float.parseFloat(wynik.getText() + "0");
+                    div = true;
+                    wynik.setText("0");
+                }
                 break;
             }
             case R.id.multileButton:{
-                valueOne = Float.parseFloat(wynik.getText() + "0");
-                mul = true;
-                wynik.setText("0");
-
+                if(wynik.getText()!=null)
+                {
+                    valueOne = Float.parseFloat(wynik.getText() + "0");
+                    mul = true;
+                    wynik.setText("0");
+                }
                 break;
             }
             case R.id.minusButton:{
-                valueOne = Float.parseFloat(wynik.getText()+"0");
-                add=true;
-                wynik.setText("0");
-
+                if(wynik.getText()!=null)
+                {
+                    valueOne = Float.parseFloat(wynik.getText() + "0");
+                    add = true;
+                    wynik.setText("0");
+                }
                 break;
             }
             case R.id.plusButton:{
-
-                    valueOne = Float.parseFloat(wynik.getText()+"");
-                    add=true;
+                if(wynik.getText()!=null)
+                {
+                    valueOne = Float.parseFloat(wynik.getText() + "");
+                    add = true;
                     wynik.setText("0");
-
+                }
                 break;
             }
             case R.id.resultButton:{
@@ -241,14 +249,12 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 }
                 if(div){
                     if (valueTwo==0)
-                    {
                         Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                        {
+
+                    else if (valueTwo!=0){
                         wynik.setText(valueOne / valueTwo + "");
-                        div = false;
-                        }
+                        div=false;
+                    }
                 }
                 if(pow){
                     wynik.setText(Math.pow(valueOne,valueTwo)+"");
@@ -262,9 +268,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.pointButton:{
                 String liczba = String.valueOf(wynik.getText());
                 if(liczba.contains("."))
-                {
                     Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_SHORT).show();
-                }
                 else
                     wynik.setText(wynik.getText() + ".");
 
@@ -304,13 +308,13 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.xpowYButton:{
                 valueOne = Float.parseFloat(wynik.getText()+"");
                 pow=true;
-                wynik.setText(null);
+                wynik.setText("0");
                 break;
             }
             case R.id.logButton:{
                 valueOne = Float.parseFloat(wynik.getText()+"");
                 log=true;
-                wynik.setText(null);
+                wynik.setText("0");
                 break;
             }
 

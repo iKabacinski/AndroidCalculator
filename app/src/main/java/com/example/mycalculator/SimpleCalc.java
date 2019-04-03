@@ -140,7 +140,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 int length = wynik.length();
                 if(length!=0) {
                     String tekst = String.valueOf(wynik.getText());
-                    wynik.setText(tekst.substring(length-(length - 1)));
+                    wynik.setText(tekst.substring(1,length));
                 }
                 break;
             }
@@ -169,33 +169,38 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.slashButton:{
-
-                valueOne = Float.parseFloat(wynik.getText() + "");
-                div = true;
-                wynik.setText("0");
+                if(wynik.getText()!=null)
+                {
+                    valueOne = Float.parseFloat(wynik.getText() + "");
+                    div = true;
+                    wynik.setText("0");
+                }
                 break;
             }
             case R.id.multileButton:{
-                valueOne = Float.parseFloat(wynik.getText() + "");
-                mul = true;
-                wynik.setText("0");
-
+                if(wynik.getText()!=null) {
+                    valueOne = Float.parseFloat(wynik.getText() + "");
+                    mul = true;
+                    wynik.setText("0");
+                }
                 break;
             }
             case R.id.minusButton:{
-
-                    valueOne = Float.parseFloat(wynik.getText()+"");
-                    add=true;
+                if(wynik.getText()!=null)
+                {
+                    valueOne = Float.parseFloat(wynik.getText() + "");
+                    add = true;
                     wynik.setText("0");
-
+                }
                 break;
             }
             case R.id.plusButton:{
-
-                    valueOne = Float.parseFloat(wynik.getText()+"");
-                    add=true;
+                if(wynik.getText()!=null)
+                {
+                    valueOne = Float.parseFloat(wynik.getText() + "");
+                    add = true;
                     wynik.setText("0");
-
+                }
                 break;
             }
             case R.id.resultButton:{
@@ -216,7 +221,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                     if (valueTwo==0){
                         Toast.makeText(getApplicationContext(),"Nie można dzielić przez 0!!!",Toast.LENGTH_SHORT).show();
                     }
-                    else {
+                    else if (valueTwo!=0) {
                         wynik.setText(valueOne / valueTwo + "");
                         div = false;
                     }
@@ -226,11 +231,9 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             case R.id.pointButton:{
                 String liczba= String.valueOf(wynik.getText());
                 if(liczba.contains("."))
-                {
                     Toast.makeText(getApplicationContext(),"Zawiera już separator dziesiętny",Toast.LENGTH_SHORT).show();
-                }
                 else
-                wynik.setText(wynik.getText() + ".");
+                    wynik.setText(wynik.getText() + ".");
 
                 break;
             }
