@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SimpleCalc extends AppCompatActivity implements View.OnClickListener {
     Button zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, eightButton, nineButton,
             sevenButton, bkspButton, cButton, plusMinusButton, slashButton, plusButton, minusButton, multipleButton, resultButton, pointButton;
-    EditText wynik;
+    TextView wynik;
     private int c = 0;
     float valueOne = 0, valueTwo = 0;
     boolean add, sub, mul, div;
@@ -173,24 +174,44 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.slashButton: {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueOne = Float.parseFloat("0" + wynik.getText());
                 div = true;
                 wynik.setText("0");
                 break;
             }
             case R.id.multileButton: {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueOne = Float.parseFloat("0" + wynik.getText());
                 mul = true;
                 wynik.setText("0");
                 break;
             }
             case R.id.minusButton: {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueOne = Float.parseFloat("0" + wynik.getText());
                 add = true;
                 wynik.setText("0");
                 break;
             }
             case R.id.plusButton: {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueOne = Float.parseFloat("0" + wynik.getText() + "");
                 add = true;
                 wynik.setText("0");

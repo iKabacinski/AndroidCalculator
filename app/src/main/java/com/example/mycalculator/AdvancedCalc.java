@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AdvancedCalc extends AppCompatActivity implements View.OnClickListener {
     Button zeroButton, oneButton,twoButton,threeButton,fourButton,fiveButton,sixButton,eightButton,nineButton,
             sevenButton,bkspButton,cButton,plusMinusButton,slashButton,plusButton,minusButton,multipleButton,resultButton,pointButton,
             sinButton,cosButton,lnButton,logButton,xPowYButton,pow2Button,tanButton,sqrtButton;
-    EditText wynik;
+    TextView wynik;
     private int c=0;
     float valueOne, valueTwo;
     boolean add, sub, mul, div,
@@ -45,7 +46,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
         sevenButton = findViewById(R.id.sevenButton);
         sevenButton.setOnClickListener(this);
 
-        eightButton = findViewById(R.id.cosButton);
+        eightButton = findViewById(R.id.eightButton);
         eightButton.setOnClickListener(this);
 
         nineButton = findViewById(R.id.nineButton);
@@ -202,39 +203,55 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.slashButton:{
-                if(wynik.getText()!=null)
-                {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+
                     valueOne = Float.parseFloat("0"+wynik.getText());
                     div = true;
                     wynik.setText("0");
-                }
+
                 break;
             }
             case R.id.multileButton:{
-                if(wynik.getText()!=null)
-                {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+
                     valueOne = Float.parseFloat("0"+wynik.getText());
                     mul = true;
                     wynik.setText("0");
-                }
+
                 break;
             }
             case R.id.minusButton:{
-                if(wynik.getText()!=null)
-                {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+
                     valueOne = Float.parseFloat("0"+wynik.getText());
                     add = true;
                     wynik.setText("0");
-                }
+
                 break;
             }
             case R.id.plusButton:{
-                if(wynik.getText()!=null)
-                {
+                String tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+
                     valueOne = Float.parseFloat("0"+wynik.getText());
                     add = true;
                     wynik.setText("0");
-                }
+
                 break;
             }
             case R.id.resultButton:{
@@ -283,42 +300,96 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             }
             // Advanced operations
             case R.id.sinButton:{
+                String tekst =wynik.getText()+"";
+
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.sin(valueTwo)+"");
                 break;
             }
             case R.id.cosButton:{
+                String tekst =wynik.getText()+"";
+
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.cos(valueTwo)+"");
                 break;
             }
             case R.id.tanButton:{
+                String tekst =wynik.getText()+"";
+
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+
                 valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.tan(valueTwo)+"");
                 break;
             }
             case R.id.sqrtButton:{
+                String tekst =wynik.getText()+"";
+
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+                if(tekst.contains("-")) {
+                    Toast.makeText(getApplicationContext(), "Nie można pierwiastkować przez UJEMNE!!", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.sqrt(valueTwo)+"");
                 break;
             }
             case R.id.pow2Button:{
+                String tekst =wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.pow(valueTwo,2)+"");
                 break;
             }
             case R.id.lnButton:{
+                String tekst =wynik.getText()+"";
+                float sNumber =Float.parseFloat(tekst);
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+                if(sNumber==0){
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueTwo= Float.parseFloat("0"+wynik.getText()+"");
                 wynik.setText(Math.log(valueTwo)+"");
                 break;
             }
             case R.id.xpowYButton:{
+                String tekst =wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueOne = Float.parseFloat("0"+wynik.getText()+"");
                 pow=true;
                 wynik.setText("0");
                 break;
             }
             case R.id.logButton:{
+                String tekst =wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
+                    Toast.makeText(getApplicationContext(), "BŁĄD", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 valueOne = Float.parseFloat("0"+wynik.getText()+"");
                 log=true;
                 wynik.setText("0");
