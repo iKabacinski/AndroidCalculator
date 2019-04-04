@@ -17,6 +17,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
     float valueOne, valueTwo;
     boolean add, sub, mul, div,
     pow,log;
+    String tekst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +115,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
 
             case R.id.zeroButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -124,7 +125,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.oneButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -134,7 +135,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.twoButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -144,7 +145,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.threeButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -154,7 +155,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.fourButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -164,7 +165,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.fiveButton:{
-                String tekst =wynik.getText()+"";
+                 tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -175,9 +176,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.sixButton:{
-
-
-                String tekst =wynik.getText()+"";
+                 tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -186,7 +185,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.sevenButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -196,7 +195,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.eightButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -206,7 +205,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.nineButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -216,7 +215,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.bkspButton:{
-                String tekst =wynik.getText()+"";
+                tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -248,22 +247,22 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.plusMinusButton:{
 
-                String sNumber = wynik.getText()+"";
-                if(sNumber.contains("Infinity")) {
+                tekst = wynik.getText()+"";
+                if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
-                if(!sNumber.contains("-")){
+                if(!tekst.contains("-")){
                     wynik.setText("-"+wynik.getText());
                 }
-                else if(sNumber.contains("-")) {
+                else if(tekst.contains("-")) {
                     float number = -1 * Float.parseFloat(wynik.getText() + "");
                     wynik.setText(number+"");
                 }
                 break;
             }
             case R.id.slashButton:{
-                String tekst = wynik.getText()+"";
+                tekst = wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -276,7 +275,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.multileButton:{
-                String tekst = wynik.getText()+"";
+                tekst = wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -289,7 +288,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.minusButton:{
-                String tekst = wynik.getText()+"";
+                tekst = wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
@@ -302,7 +301,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.plusButton:{
-                String tekst = wynik.getText()+"";
+                tekst = wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
