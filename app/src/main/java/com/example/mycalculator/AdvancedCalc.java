@@ -293,6 +293,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                     div=false;
                     pow=false;
                     log=false;
+                    Toast.makeText(getApplicationContext(),"WYZEROWANO WSZYSTKO",Toast.LENGTH_SHORT).show();
                 }
 
                 break;

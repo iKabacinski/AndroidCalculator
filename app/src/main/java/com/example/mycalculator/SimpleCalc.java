@@ -246,6 +246,8 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                     div=false;
                     add=false;
                     sub=false;
+                    Toast.makeText(getApplicationContext(),"WYZEROWANO WSZYSTKO",Toast.LENGTH_SHORT).show();
+
                 }
 
                 break;
