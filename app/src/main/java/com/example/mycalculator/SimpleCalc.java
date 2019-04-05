@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class SimpleCalc extends AppCompatActivity implements View.OnClickListener {
     Button zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, eightButton, nineButton,
             sevenButton, bkspButton, cButton, plusMinusButton, slashButton, plusButton, minusButton, multipleButton, resultButton, pointButton;
@@ -16,6 +18,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
     float valueOne = 0, valueTwo = 0;
     boolean add, sub, mul, div;
     String tekst;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +85,40 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
         wynik = findViewById(R.id.wynik);
         wynik.setOnClickListener(this);
         wynik.setText("0");
+
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("wynik", wynik.getText()+"");
+        outState.putFloat("valueOne",valueOne);
+        outState.putFloat("valueTwo",valueTwo);
+        outState.putBoolean("div",div);
+        outState.putBoolean("mul",mul);
+        outState.putBoolean("add",add);
+        outState.putBoolean("sub",sub);
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        String tekst = savedInstanceState.getString("wynik");
+        wynik.setText(tekst);
+        float firstValue = savedInstanceState.getFloat("valueOne",valueOne);
+        valueOne=firstValue;
+        float secondValue = savedInstanceState.getFloat("valueTwo",valueTwo);
+        valueTwo =secondValue;
+
+        Boolean adding = savedInstanceState.getBoolean("add",add);
+        add =adding;
+        Boolean subbin = savedInstanceState.getBoolean("sub",sub);
+        sub = subbin;
+        Boolean mullin = savedInstanceState.getBoolean("mul",mul);
+        mul=mullin;
+        Boolean divid = savedInstanceState.getBoolean("div",div);
+        div = divid;
+
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
@@ -257,7 +294,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                     wynik.setText("0");
                 }
                 else {
-                    valueOne =0+ Float.parseFloat("0" + wynik.getText());
+                    valueOne =0+ Float.parseFloat( wynik.getText()+"");
                     add = true;
                     wynik.setText("0");
                 }
@@ -277,7 +314,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.resultButton: {
-                valueTwo = 0+Float.parseFloat("0"+wynik.getText());
+                valueTwo = 0+Float.parseFloat(wynik.getText()+"");
                 if (add) {
                     wynik.setText(valueOne + valueTwo + "");
                     add = false;

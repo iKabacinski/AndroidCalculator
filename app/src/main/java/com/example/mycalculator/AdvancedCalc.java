@@ -19,9 +19,14 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
     pow,log;
     String tekst;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         setContentView(R.layout.activity_advance_calc);
         zeroButton = findViewById(R.id.zeroButton);
         zeroButton.setOnClickListener(this);
@@ -107,10 +112,57 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
         wynik = findViewById(R.id.wynik);
         wynik.setOnClickListener(this);
         wynik.setText("0");
+
+
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("wynik", wynik.getText()+"");
+        outState.putFloat("valueOne",valueOne);
+        outState.putFloat("valueTwo",valueTwo);
+        outState.putBoolean("div",div);
+        outState.putBoolean("mul",mul);
+        outState.putBoolean("add",add);
+        outState.putBoolean("sub",sub);
+        outState.putBoolean("pow",pow);
+        outState.putBoolean("log",log);
+
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        String tekst = savedInstanceState.getString("wynik");
+        wynik.setText(tekst);
+        float firstValue = savedInstanceState.getFloat("valueOne",valueOne);
+        valueOne =firstValue;
+        float secondValue = savedInstanceState.getFloat("valueTwo",valueTwo);
+        valueTwo =secondValue;
+
+        Boolean adding = savedInstanceState.getBoolean("add",add);
+        add =adding;
+        Boolean subbin = savedInstanceState.getBoolean("sub",sub);
+        sub = subbin;
+        Boolean mullin = savedInstanceState.getBoolean("mul",mul);
+        mul=mullin;
+        Boolean divid = savedInstanceState.getBoolean("div",div);
+        div = divid;
+        Boolean logg = savedInstanceState.getBoolean("log",log);
+        log = logg;
+        Boolean power = savedInstanceState.getBoolean("pow",pow);
+        pow=power;
+
+
+
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
     public void onClick(View v) {
+
 
         switch (v.getId()){
 
@@ -268,7 +320,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                     wynik.setText("0");
                 }
                 else {
-                    valueOne = 0+Float.parseFloat("0" + wynik.getText());
+                    valueOne = 0+Float.parseFloat(wynik.getText()+"");
                     div = true;
                     wynik.setText("0");
                 }
@@ -281,7 +333,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                     wynik.setText("0");
                 }
                 else {
-                    valueOne =0+ Float.parseFloat("0" + wynik.getText());
+                    valueOne =0+ Float.parseFloat( wynik.getText()+"");
                     mul = true;
                     wynik.setText("0");
                 }
@@ -308,14 +360,14 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 }
                 else {
 
-                    valueOne =0+ Float.parseFloat("0" + wynik.getText());
+                    valueOne =0+ Float.parseFloat(wynik.getText()+"");
                     add = true;
                     wynik.setText("0");
                 }
                 break;
             }
             case R.id.resultButton:{
-                valueTwo=0+Float.parseFloat("0"+wynik.getText());
+                valueTwo=0+Float.parseFloat(wynik.getText()+"");
                 if(add)
                 {
                     wynik.setText(valueOne+valueTwo+"");
