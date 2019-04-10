@@ -25,8 +25,6 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
 
 
-
-
         setContentView(R.layout.activity_advance_calc);
         zeroButton = findViewById(R.id.zeroButton);
         zeroButton.setOnClickListener(this);
@@ -37,7 +35,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
         twoButton = findViewById(R.id.twoButton);
         twoButton.setOnClickListener(this);
 
-        threeButton = findViewById(R.id.threeButton);
+        threeButton = findViewById(R.id.threeButton );
         threeButton.setOnClickListener(this);
 
         fourButton = findViewById(R.id.fourButton);
@@ -196,7 +194,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
 
                 break;
             }
-            case R.id.threeButton:{
+            case R.id.threeButton :{
                 tekst =wynik.getText()+"";
                 if(tekst.contains("Infinity")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
@@ -373,16 +371,22 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 {
                     wynik.setText(valueOne+valueTwo+"");
                     add=false;
+                    valueOne=0;
+                    valueTwo=0;
                 }
                 if(sub)
                 {
                     wynik.setText(valueOne-valueTwo+"");
                     sub=false;
+                    valueOne=0;
+                    valueTwo=0;
                 }
                 if(mul)
                 {
                     wynik.setText(valueOne*valueTwo+"");
                     mul=false;
+                    valueOne=0;
+                    valueTwo=0;
                 }
                 if(div){
                     if (valueTwo==0)
@@ -391,14 +395,21 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                     else if (valueTwo!=0){
                         wynik.setText(valueOne / valueTwo + "");
                         div=false;
+                        valueOne=0;
+                        valueTwo=0;
                     }
                 }
                 if(pow){
                     wynik.setText(Math.pow(valueOne,valueTwo)+"");
                     pow=false;
+                    valueOne=0;
+                    valueTwo=0;
                 }
                 if(log){
                     wynik.setText(Math.log(valueOne)/Math.log(valueTwo)+"");
+                    log=false;
+                    valueOne=0;
+                    valueTwo=0;
                 }
                 break;
             }
