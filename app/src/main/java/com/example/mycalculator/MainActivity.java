@@ -65,12 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
         setContentView(R.layout.activity_main);
-          //  Toast.makeText(MainActivity.this,"Click one more time to exist app", Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(MainActivity.this,"Click one more time to exist app", Toast.LENGTH_SHORT).show();
 
     }
 }
