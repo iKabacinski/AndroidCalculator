@@ -128,8 +128,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
             case R.id.zeroButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("0");
                 } else
                     wynik.setText(wynik.getText() + "0");
@@ -138,8 +137,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.oneButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam  na 1!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("1");
                 } else
                     wynik.setText(wynik.getText() + "1");
@@ -148,8 +146,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.twoButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam  na 2!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("2");
                 } else
                     wynik.setText(wynik.getText() + "2");
@@ -158,8 +155,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.threeButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 3!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("3");
                 } else
                     wynik.setText(wynik.getText() + "3");
@@ -168,8 +164,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.fourButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 4!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("4");
                 } else
                     wynik.setText(wynik.getText() + "4");
@@ -178,8 +173,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.fiveButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 5!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("5");
                 } else
                     wynik.setText(wynik.getText() + "5");
@@ -188,8 +182,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.sixButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 6!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("6");
                 } else
                     wynik.setText(wynik.getText() + "6");
@@ -198,8 +191,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.sevenButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 7!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("7");
                 } else
                     wynik.setText(wynik.getText() + "7");
@@ -208,8 +200,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.eightButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 8!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("8");
                 } else
                     wynik.setText(wynik.getText() + "8");
@@ -218,8 +209,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.nineButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 9!!!", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.contains("NaN") || tekst.equals("0")) {
                     wynik.setText("9");
                 } else
                     wynik.setText(wynik.getText() + "9");
@@ -266,7 +256,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             case R.id.slashButton: {
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 } else {
                     valueOne = 0 + Float.parseFloat(wynik.getText() + "");
@@ -278,7 +268,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             case R.id.multileButton: {
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam  na 0!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Zamieniam  na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 } else {
                     valueOne = 0 + Float.parseFloat(wynik.getText() + "");
@@ -290,7 +280,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             case R.id.minusButton: {
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 } else {
                     valueOne = 0 + Float.parseFloat(wynik.getText() + "");
@@ -302,7 +292,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             case R.id.plusButton: {
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 } else {
                     valueOne = 0 + Float.parseFloat(wynik.getText() + "");
