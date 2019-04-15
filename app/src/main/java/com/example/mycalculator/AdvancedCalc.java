@@ -272,7 +272,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 }
                 int len = wynik.length();
                 if(wynik.length()!=0) {
-                    wynik.setText(tekst.substring(1,len));
+                    wynik.setText(tekst.substring(0,len-1));
                 }
                 break;
             }
@@ -346,7 +346,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 }
                 else {
                     valueOne =0+ Float.parseFloat("0" + wynik.getText());
-                    add = true;
+                    sub = true;
                     wynik.setText("0");
                 }
                 break;
