@@ -375,7 +375,6 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
     public void onBackPressed() {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
-        setContentView(R.layout.activity_main);
 
     }
 

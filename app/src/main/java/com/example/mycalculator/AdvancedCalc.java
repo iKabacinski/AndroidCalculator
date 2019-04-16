@@ -536,7 +536,6 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
-        setContentView(R.layout.activity_main);
 
     }
 

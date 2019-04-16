@@ -39,26 +39,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 Intent simple = new Intent(this, SimpleCalc.class);
                 startActivity(simple);
-                setContentView(R.layout.activity_simple_calc);
+               // setContentView(R.layout.activity_simple_calc);
                 break;
             }
             case R.id.advancedButton: {
 
                 Intent advanced = new Intent(this, AdvancedCalc.class);
                 startActivity(advanced);
-                setContentView(R.layout.activity_advance_calc);
+               // setContentView(R.layout.activity_advance_calc);
                 break;
             }
             case R.id.aboutButton: {
 
                 Intent about = new Intent(this, AboutCalc.class);
                 startActivity(about);
-                setContentView(R.layout.activity_about_calc);
+                //setContentView(R.layout.activity_about_calc);
 
                 break;
             }
             case R.id.exitButton: {
-                //moveTaskToBack(true);
+                moveTaskToBack(true);
                 Process.killProcess(Process.myPid());
                 System.exit(1);
                 break;
@@ -66,12 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @Override
+   /* @Override
     public void onBackPressed() {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
-        setContentView(R.layout.activity_main);
-        //  Toast.makeText(MainActivity.this,"Click one more time to exist app", Toast.LENGTH_SHORT).show();
 
-    }
+    }*/
 }

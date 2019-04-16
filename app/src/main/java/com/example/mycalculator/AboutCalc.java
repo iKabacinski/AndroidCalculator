@@ -16,7 +16,6 @@ public class AboutCalc extends AppCompatActivity {
     public void onBackPressed() {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
-        setContentView(R.layout.activity_main);
 
     }
 
