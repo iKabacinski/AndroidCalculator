@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.exitButton: {
-                moveTaskToBack(true);
+                //moveTaskToBack(true);
                 Process.killProcess(Process.myPid());
                 System.exit(1);
                 break;

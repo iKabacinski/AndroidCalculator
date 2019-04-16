@@ -320,7 +320,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             }
             case R.id.resultButton: {
                 if ((wynik.getText() + "").isEmpty() || (wynik.getText() + "").equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
-                    //valueTwo = 0;
+                    //it valueTwo = 0;
                     wynik.setText("0");
                 } else
                     valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
