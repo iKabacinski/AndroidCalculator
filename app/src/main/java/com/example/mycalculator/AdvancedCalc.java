@@ -287,73 +287,84 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.plusMinusButton: {
 
                 tekst = wynik.getText() + "";
+
+
                 if (tekst.contains("Infinity") || tekst.contains("NaN")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+
+
                 if (!tekst.contains("-")) {
+
                     wynik.setText("-" + wynik.getText());
                 } else if (tekst.contains("-")) {
-                    float number = -1 * Float.parseFloat(wynik.getText() + "");
-                    wynik.setText(number + "");
+                    if (tekst.equals("-"))
+                        wynik.setText("");
+                    else {
+                        float number = -1 * Float.parseFloat(wynik.getText() + "");
+                        wynik.setText(number + "");
+                    }
                 }
                 break;
             }
             case R.id.slashButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam  na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    div = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand  na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                div = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.multileButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    mul = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                mul = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.minusButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat("0" + wynik.getText());
-                    sub = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+                valueOne = 0 + Float.parseFloat("0" + wynik.getText());
+                sub = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.plusButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    add = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                add = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.resultButton: {
-                if ((wynik.getText() + "").isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                if ((wynik.getText() + "").isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    //valueTwo = 0;
                     wynik.setText("0");
-                }
-                valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+                } else
+                    valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+
                 if (add) {
                     wynik.setText(valueOne + valueTwo + "");
                     add = false;
@@ -374,7 +385,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 }
                 if (div) {
                     if (valueTwo == 0)
-                        Toast.makeText(getApplicationContext(), "Nie można dzielić przez 0!!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Nie można dzielić przez 0", Toast.LENGTH_SHORT).show();
 
                     else if (valueTwo != 0) {
                         wynik.setText(valueOne / valueTwo + "");
@@ -382,6 +393,7 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                         valueOne = 0;
                         valueTwo = 0;
                     }
+
                 }
                 if (pow) {
                     wynik.setText(Math.pow(valueOne, valueTwo) + "");
@@ -410,43 +422,46 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
             case R.id.sinButton: {
                 String tekst = wynik.getText() + "";
 
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
-                } else {
-                    valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
-                    wynik.setText(Math.sin(valueTwo) + "");
-                    break;
                 }
+                valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+                wynik.setText(Math.sin(valueTwo) + "");
+
+
+                break;
             }
             case R.id.cosButton: {
                 String tekst = wynik.getText() + "";
 
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
-                } else {
-                    valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
-                    wynik.setText(Math.cos(valueTwo) + "");
-                    break;
                 }
+                valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+                wynik.setText(Math.cos(valueTwo) + "");
+
+
+                break;
             }
             case R.id.tanButton: {
                 String tekst = wynik.getText() + "";
 
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
-                } else {
-                    valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
-                    wynik.setText(Math.tan(valueTwo) + "");
-                    break;
                 }
+                valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+                wynik.setText(Math.tan(valueTwo) + "");
+
+
+                break;
             }
             case R.id.sqrtButton: {
                 String tekst = wynik.getText() + "";
 
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
@@ -456,59 +471,60 @@ public class AdvancedCalc extends AppCompatActivity implements View.OnClickListe
                 } else {
                     valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
                     wynik.setText(Math.sqrt(valueTwo) + "");
-                    break;
+
                 }
+                break;
             }
             case R.id.pow2Button: {
                 String tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
-                } else {
-                    valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
-                    wynik.setText(Math.pow(valueTwo, 2) + "");
-                    break;
                 }
+                valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+                wynik.setText(Math.pow(valueTwo, 2) + "");
+
+
+                break;
             }
             case R.id.lnButton: {
                 String tekst = wynik.getText() + "";
-                float sNumber = Float.parseFloat(tekst);
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                }
-                if (sNumber == 0) {
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 } else {
                     valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
                     wynik.setText(Math.log(valueTwo) + "");
-                    break;
                 }
+
+                break;
             }
+
             case R.id.xpowYButton: {
                 String tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    pow = true;
-                    wynik.setText("0");
-                    break;
                 }
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                pow = true;
+                wynik.setText("0");
+
+
+                break;
             }
             case R.id.logButton: {
                 String tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                if (tekst.contains("Infinity") || tekst.equals(".") || tekst.isEmpty() || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    log = true;
-                    wynik.setText("0");
-                    break;
                 }
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                log = true;
+                wynik.setText("0");
+
+
+                break;
             }
 
 

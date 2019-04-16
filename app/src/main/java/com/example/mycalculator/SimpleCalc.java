@@ -217,12 +217,16 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.bkspButton: {
+                tekst = wynik.getText() + "";
+                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
                 int len = wynik.length();
                 if (wynik.length() != 0) {
-                    String tekst = String.valueOf(wynik.getText());
                     wynik.setText(tekst.substring(0, len - 1));
-                } else
-                    break;
+                }
+                break;
             }
             case R.id.cButton: {
                 c++;
@@ -245,68 +249,82 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
             case R.id.plusMinusButton: {
 
                 tekst = wynik.getText() + "";
+
+
+                if (tekst.contains("Infinity") || tekst.contains("NaN")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
+                    wynik.setText("0");
+                }
+
+
                 if (!tekst.contains("-")) {
+
                     wynik.setText("-" + wynik.getText());
                 } else if (tekst.contains("-")) {
-                    float number = -1 * Float.parseFloat(wynik.getText() + "");
-                    wynik.setText(number + "");
+                    if (tekst.equals("-"))
+                        wynik.setText("");
+                    else {
+                        float number = -1 * Float.parseFloat(wynik.getText() + "");
+                        wynik.setText(number + "");
+                    }
                 }
                 break;
             }
             case R.id.slashButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    div = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                div = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.multileButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam  na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    mul = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                mul = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.minusButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    sub = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand infinity na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                sub = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.plusButton: {
                 tekst = wynik.getText() + "";
-                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam infinity na 0", Toast.LENGTH_SHORT).show();
-                    wynik.setText("0");
-                } else {
-                    valueOne = 0 + Float.parseFloat(wynik.getText() + "");
-                    add = true;
+                if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand na 0", Toast.LENGTH_SHORT).show();
                     wynik.setText("0");
                 }
+                valueOne = 0 + Float.parseFloat(wynik.getText() + "");
+                add = true;
+                wynik.setText("0");
+
                 break;
             }
             case R.id.resultButton: {
-                if ((wynik.getText() + "").isEmpty() || (wynik.getText() + "").equals(".") || tekst.contains("NaN")) {
-                    Toast.makeText(getApplicationContext(), "Zamieniam na 0!!!", Toast.LENGTH_SHORT).show();
+                if ((wynik.getText() + "").isEmpty() || (wynik.getText() + "").equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
+                    //valueTwo = 0;
                     wynik.setText("0");
-                }
-                valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+                } else
+                    valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
+
                 if (add) {
                     wynik.setText(valueOne + valueTwo + "");
                     valueOne = 0;
@@ -327,13 +345,15 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 }
                 if (div) {
                     if (valueTwo == 0) {
-                        Toast.makeText(getApplicationContext(), "Nie można dzielić przez 0!!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Nie można dzielić przez 0", Toast.LENGTH_SHORT).show();
+
                     } else if (valueTwo != 0) {
                         wynik.setText(valueOne / valueTwo + "");
                         valueOne = 0;
                         valueTwo = 0;
                         div = false;
                     }
+
                 }
                 break;
             }
@@ -346,6 +366,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
 
                 break;
             }
+
 
         }
     }
