@@ -23,6 +23,7 @@
                 android:layout_weight="1"
                 android:text="0"
                 android:textAlignment="textEnd"
+                android:textSize="24sp"
                 android:textStyle="bold" />
         </TableRow>
 

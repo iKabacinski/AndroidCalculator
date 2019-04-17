@@ -271,6 +271,10 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.slashButton: {
+                add=false;
+                sub=false;
+                mul=false;
+
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand na 0", Toast.LENGTH_SHORT).show();
@@ -283,6 +287,10 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.multileButton: {
+                add=false;
+                sub=false;
+                div=false;
+
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam pierwszy na 0", Toast.LENGTH_SHORT).show();
@@ -295,6 +303,10 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.minusButton: {
+                add=false;
+                div=false;
+                mul=false;
+
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand infinity na 0", Toast.LENGTH_SHORT).show();
@@ -307,6 +319,9 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.plusButton: {
+                sub=false;
+                div=false;
+                mul=false;
                 tekst = wynik.getText() + "";
                 if (tekst.contains("Infinity") || tekst.isEmpty() || tekst.equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
                     Toast.makeText(getApplicationContext(), "Zamieniam pierwszy operand na 0", Toast.LENGTH_SHORT).show();
@@ -319,8 +334,7 @@ public class SimpleCalc extends AppCompatActivity implements View.OnClickListene
                 break;
             }
             case R.id.resultButton: {
-                if ((wynik.getText() + "").isEmpty() || (wynik.getText() + "").equals(".") || tekst.contains("NaN") || tekst.equals("-")) {
-                    //it valueTwo = 0;
+                if ((wynik.getText() + "").isEmpty() || (wynik.getText() + "").equals(".") || (wynik.getText()+"").contains("NaN") || (wynik.getText()+"").equals("-")) {
                     wynik.setText("0");
                 } else
                     valueTwo = 0 + Float.parseFloat(wynik.getText() + "");
